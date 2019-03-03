@@ -28,8 +28,13 @@ const client = new Discord.Client();
 const prefix = "!";
 const message = "";
 
+var request = require('request');
+
 var developerids = ["204669722094993417", "434866216528510986"]
 var nullPlaceholder = "null";
+
+var serverIP = "mc.jtrent238.tk";
+var serverPort = "21156";
 
 client.on('ready',() => {
   console.log(`Logged in as: ${client.user.tag}!`);
@@ -68,13 +73,32 @@ client.on('message', message => {
   
     //Gets Server Status
   if (message.content.startsWith(prefix + "status")) {
-    message.channel.sendMessage('Server Status\n' +
+    request('https://mcapi.us/server/status?ip=' + serverIP + '&port=' + serverPort, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        var importedJSON = JSON.parse(body);
+                      
+                      if(importedJSON.online == true) {
+                        var isOnline = "Online";
+                      } 
+                      if(importedJSON.online == false) {
+                        var isOnline = "Offline";
+                      } 
+                        message.channel.sendMessage('Server Status\n' +
                                 '-------------------------------\n' +
-                                '• Server is: `' + nullPlaceholder + '`\n' +
-                                '• Players Online: `' + nullPlaceholder + ' / ' + nullPlaceholder + '`\n' +
+                                '• Server is: `' + isOnline + '`\n' +
+                                '• Players Online: `' + importedJSON.players.now + ' / ' + importedJSON.players.max + '`\n' +
                                 '• Server TPS: `' + nullPlaceholder + ' / ' + nullPlaceholder + '`\n' +
-                                '• Server Uptime: `' + nullPlaceholder + '`\n' 
+                                '• Server Uptime: `' + importedJSON.duration + '`\n'
                                );
+                    }
+                  if(isOnline == false){
+                    message.channel.sendMessage('Server last online: `' + importedJSON.last_online + '`');
+                  }
+                  if(importedJSON.error != ""){
+                    message.channel.sendMessage(importedJSON.error)
+                  }
+                })
+    
   }
       //Information about the bot.
   //if (message.content.startsWith(prefix + 'info')) {

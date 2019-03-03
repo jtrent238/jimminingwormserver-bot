@@ -20,6 +20,7 @@
   "homepage": "https://github.com/YorkAARGH/SuperbasicBot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   }
 }
