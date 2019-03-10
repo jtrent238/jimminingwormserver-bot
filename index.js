@@ -33,8 +33,8 @@ var request = require('request');
 var developerids = ["204669722094993417", "434866216528510986"]
 var nullPlaceholder = "null";
 
-var serverIP = "mc.jtrent238.tk";
-var serverPort = "21156";
+var serverIP = "158.69.118.73";
+var serverPort = "25615";
 
 client.on('ready',() => {
   console.log(`Logged in as: ${client.user.tag}!`);
@@ -55,7 +55,7 @@ client.on('message', message => {
     message.channel.sendMessage('The prefix for the bot is `' + prefix + '` \n _*Commands!*_ \n' +
                                 '`help` = Shows this message. :question: \n' +
                                 '`serverip` = Shows the ip of the Minecraft server! <:jtrent238_Head:303626623041798156> \n' +
-                                '`serverstatus` = Shows the status of the server! :desktop:'
+                                '`status` = Shows the status of the server! :desktop:'
                             )
     message.channel.sendMessage('')}
      
@@ -68,8 +68,9 @@ client.on('message', message => {
   
     //Gets Server IP
   if (message.content.startsWith(prefix + 'serverip')) {
-    message.channel.sendMessage('Server ip: ``mc.jtrent238.tk:21156`` <:jtrent238_Head:303626623041798156>');
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
   }
+
   
     //Gets Server Status
   if (message.content.startsWith(prefix + "status")) {
