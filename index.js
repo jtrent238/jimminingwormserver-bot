@@ -89,8 +89,41 @@ client.on('message', message => {
                                 '• Server is: `' + isOnline + '`\n' +
                                 '• Players Online: `' + importedJSON.players.now + ' / ' + importedJSON.players.max + '`\n' +
                                 '• Server TPS: `' + nullPlaceholder + ' / ' + nullPlaceholder + '`\n' +
-                                '• Server Uptime: `' + importedJSON.duration + '`\n'
+                                '• Server Time: `' + importedJSON.duration + '`\n'
                                );
+                    //  message.channel.sendMessage('List of Players:\n'+
+                    //            '---------------------------------\n' +
+                    //            importedJSON.players
+                    }
+                  if(isOnline == false){
+                    message.channel.sendMessage('Server last online: `' + importedJSON.last_online + '`');
+                  }
+                  if(importedJSON.error != ""){
+                    message.channel.sendMessage(importedJSON.error)
+                  }
+                })
+    
+  }
+  
+  //Gets Server info
+  if (message.content.startsWith(prefix + "mods")) {
+    request('https://api.mcsrvstat.us/1/' + serverIP + ':' + serverPort, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        var importedJSON = JSON.parse(body);
+                      
+                      if(importedJSON.online == true) {
+                        var isOnline = "Online";
+                      } 
+                      if(importedJSON.online == false) {
+                        var isOnline = "Offline";
+                      } 
+                        message.channel.sendMessage('Mods Installed on the server:\n' +
+                                '-------------------------------\n' +
+                            //for (int i = 0; i < importedJSON.mods.length; i++) {
+                            //    '• ' + importedJSON.mods.names.i + '\n'
+                            //}
+                              'Work in progress!' 
+                              );
                     }
                   if(isOnline == false){
                     message.channel.sendMessage('Server last online: `' + importedJSON.last_online + '`');
