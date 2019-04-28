@@ -35,14 +35,32 @@ var nullPlaceholder = "null";
 
 var serverIP = "158.69.118.73";
 var serverPort = "25615";
-
+//var isOnline = "null";
 client.on('ready',() => {
   console.log(`Logged in as: ${client.user.tag}!`);
   console.log(`Client Id: ${client.user.id}!`);
   console.log(`Is client Verified?: ${client.user.verified}!`);
   console.log(`Client Created on: ${client.user.createdAt}!`);
+  
+   //Gets Server Status
+  
+    request('https://mcapi.us/server/status?ip=' + serverIP + '&port=' + serverPort, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        var importedJSON = JSON.parse(body);
+                      
+                      if(importedJSON.online == true) {
+                        var isServerOnline = "Online";
+                      } 
+                      if(importedJSON.online == false) {
+                        var isServerOnline = "Offline";
+                      } 
+                        
+                    client.user.setActivity(isServerOnline + ' @ ' + serverIP + ':' + serverPort);
+                    }
+                })
+    
   //hook.send('I am now alive!');
-  //client.user.setActivity(`Orespawn ` + process.env.OSVER + ` on DangerZone ` + process.env.DZVER);
+    
   //game(streamingGame);
 });
 
