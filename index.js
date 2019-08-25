@@ -88,6 +88,36 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'serverip')) {
     message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
   }
+  
+      //Gets Server IP
+  if (message.content.startsWith(prefix + 'serverIP')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
+  
+        //Gets Server IP
+  if (message.content.startsWith(prefix + 'serverIp')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
+  
+        //Gets Server IP
+  if (message.content.startsWith(prefix + 'SERVERip')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
+  
+      //Gets Server IP
+  if (message.content.startsWith(prefix + 'SERVERIP')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
+  
+        //Gets Server IP
+  if (message.content.startsWith(prefix + 'IP')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
+  
+      //Gets Server IP
+  if (message.content.startsWith(prefix + 'ip')) {
+    message.channel.sendMessage('Server ip: ``' + serverIP + ':' + serverPort + '`` <:jtrent238_Head:303626623041798156>');
+  }
 
   
     //Gets Server Status
