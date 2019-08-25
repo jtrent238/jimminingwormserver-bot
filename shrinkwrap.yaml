@@ -1,5 +1,5 @@
 dependencies:
-  discord.js: 11.4.2
+  discord.js: 11.5.1
   express: 4.16.4
   request: 2.88.0
 packages:
@@ -37,10 +37,10 @@ packages:
       node: '>=0.8'
     resolution:
       integrity: sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
-  /async-limiter/1.0.0:
+  /async-limiter/1.0.1:
     dev: false
     resolution:
-      integrity: sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
+      integrity: sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
   /asynckit/0.4.0:
     dev: false
     resolution:
@@ -150,26 +150,26 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
-  /discord.js/11.4.2:
+  /discord.js/11.5.1:
     dependencies:
       long: 4.0.0
       prism-media: 0.0.3
       snekfetch: 3.6.4
-      tweetnacl: 1.0.0
-      ws: 4.1.0
+      tweetnacl: 1.0.1
+      ws: 6.2.1
     dev: false
     engines:
       node: '>=6.0.0'
     peerDependencies:
-      bufferutil: ^3.0.3
+      '@discordjs/uws': ^10.149.0
+      bufferutil: ^4.0.0
       erlpack: discordapp/erlpack
       libsodium-wrappers: ^0.7.3
       node-opus: ^0.2.7
       opusscript: ^0.0.6
       sodium: ^2.0.3
-      uws: ^9.14.0
     resolution:
-      integrity: sha512-MDwpu0lMFTjqomijDl1Ed9miMQe6kB4ifKdP28QZllmLv/HVOJXhatRgjS8urp/wBlOfx+qAYSXcdI5cKGYsfg==
+      integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
   /ecc-jsbn/0.1.2:
     dependencies:
       jsbn: 0.1.1
@@ -656,10 +656,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
-  /tweetnacl/1.0.0:
+  /tweetnacl/1.0.1:
     dev: false
     resolution:
-      integrity: sha1-cT2LgY2kIGh0C/aDhtBHnmb8ins=
+      integrity: sha512-kcoMoKTPYnoeS50tzoqjPY3Uv9axeuuFAZY9M/9zFnhoVvRfxz9K29IMPD7jGmt2c8SW7i3gT9WqDl2+nV7p4A==
   /type-is/1.6.16:
     dependencies:
       media-typer: 0.3.0
@@ -708,17 +708,16 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
-  /ws/4.1.0:
+  /ws/6.2.1:
     dependencies:
-      async-limiter: 1.0.0
-      safe-buffer: 5.1.2
+      async-limiter: 1.0.1
     dev: false
     resolution:
-      integrity: sha512-ZGh/8kF9rrRNffkLFV4AzhvooEclrOH0xaugmqGsIfFgOE/pIz4fMc4Ef+5HSQqTEug2S9JZIWDR47duDSLfaA==
+      integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  discord.js: ^11.4.2
+  discord.js: ^11.5.1
   express: ^4.16.4
   request: ^2.88.0
